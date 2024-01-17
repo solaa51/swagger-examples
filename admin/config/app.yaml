@@ -1,0 +1,42 @@
+##
+## 所有路径均以"config/"为根目录书写
+##
+
+# 服务名称
+name: "管理后台案例"
+
+# 环境标识默认为local 本地local 测试test 预发pre 生产prod
+env: "local"
+
+# 静态文件解析目录
+staticDir:
+# html代码内的前缀路径 用户替换路径 默认为空
+#prefix: "assets/"
+# 本地存储的真实目录 默认front_end/
+#localPath: "front_end/"
+# 前端入口文件 默认index.html
+#index: "index.html"
+
+# http服务配置
+# 默认使用随机端口
+# https默认不启用
+# https证书地址为配置文件目录
+http:
+  port: "8089"
+  https: false
+  #httpsPem: "ssl/ssl.pem"
+  #httpsKey: "ssl/ssl.key"
+
+# 多机器负载均衡时设置服务ID
+# 用于分布式ID生成
+# 默认值为1
+serviceId: 1
+
+# 全局限流
+# bucket 桶容量 0时不限流 推荐桶大小=CPU核数*200
+# perSecond 表示每秒向桶内流入的数量 推荐流入=CPU核数*100
+# waitMillisecond 等待超时毫秒时间 0则不启用表示直接丢弃
+rateConfig:
+  perSecond: 0
+  bucket: 0
+  waitMillisecond: 0
